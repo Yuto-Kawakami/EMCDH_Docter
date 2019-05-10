@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.status-color-0{
+  color: green;
+}
+
+.status-color-1{
+  color: orange;
+}
+
+.status-color-2{
+  color: red;
+}
+
+.btn-outline-success {
+  color: #28a745;
+  background-color: transparent;
+  background-image: none;
+  border-color: #28a745;
+}
+
+.btn-outline-danger {
+  color: #dc3545;
+  background-color: transparent;
+  background-image: none;
+  border-color: #dc3545;
+}
+
+.btn-outline-warning {
+  color: #ffc107;
+  background-color: transparent;
+  background-image: none;
+  border-color: #ffc107;
+}
+
+.modal-content {
+  top: 350px;
+}
+.list-panel {
+  height: 800px;
+}
+
+.panel-body {
+  overflow-y: scroll;
+}
