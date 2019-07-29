@@ -30,23 +30,7 @@ const BTN_STATUS = [
 ]
 const ACCOUNT_ID = '00'
 
-
 class DemoApp extends React.PureComponent {
-  getCurrentLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function(position) {
-          return position.coords.latitude, position.coords.longitude
-        },
-        function(error) {
-          return 35.6795613614414,139.739767079332
-        }
-      )
-    } else {
-      return 35.6795613614414,139.739767079332
-    }
-  }
-
   componentWillMount() {
     this.setState({ 
       markers: [],
@@ -59,9 +43,8 @@ class DemoApp extends React.PureComponent {
         consultationRecords: [],
       },
       center: {
-        lat, lng = this.getCurrentLocation()
-        // lat: 35.6795613614414,
-        // lng: 139.739767079332,
+        lat: 35.6795613614414,
+        lng: 139.739767079332,
       },
       showModal: false,
     })
@@ -73,6 +56,23 @@ class DemoApp extends React.PureComponent {
   //       this.messageReceive(message);
   //   });
   // }
+
+  getCurrentLocation() {
+    let lat_value = 35.6795613614414
+    let lng_value = 139.739767079332
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          return {lat: position.coords.latitude, lng: position.coords.longitude}
+        },
+        function(error) {
+          return {lat: lat_value, lng: lng_value}
+        }
+      )
+    } else {
+      return {lat: lat_value, lng: lng_value}
+    }
+  }
 
 
   getUserLocations() {
