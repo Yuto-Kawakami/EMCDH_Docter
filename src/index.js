@@ -44,8 +44,9 @@ class DemoApp extends React.PureComponent {
         consultationRecords: [],
       },
       center: {
-        lat: 35.6795613614414,
-        lng: 139.739767079332,
+        lat, lng = getCurrentLocation()
+        // lat: 35.6795613614414,
+        // lng: 139.739767079332,
       },
       showModal: false,
     })
@@ -57,6 +58,21 @@ class DemoApp extends React.PureComponent {
   //       this.messageReceive(message);
   //   });
   // }
+
+  getCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          return position.coords.latitude, position.coords.longitude
+        },
+        function(error) {
+          return 35.6795613614414,139.739767079332
+        }
+      )
+    } else {
+      return 35.6795613614414,139.739767079332
+    }
+  }
 
   getUserLocations() {
     console.log('func getUserLocations');
