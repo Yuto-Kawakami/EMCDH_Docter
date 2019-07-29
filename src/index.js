@@ -32,6 +32,21 @@ const ACCOUNT_ID = '00'
 
 
 class DemoApp extends React.PureComponent {
+  getCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          return position.coords.latitude, position.coords.longitude
+        },
+        function(error) {
+          return 35.6795613614414,139.739767079332
+        }
+      )
+    } else {
+      return 35.6795613614414,139.739767079332
+    }
+  }
+
   componentWillMount() {
     this.setState({ 
       markers: [],
@@ -59,20 +74,6 @@ class DemoApp extends React.PureComponent {
   //   });
   // }
 
-  getCurrentLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function(position) {
-          return position.coords.latitude, position.coords.longitude
-        },
-        function(error) {
-          return 35.6795613614414,139.739767079332
-        }
-      )
-    } else {
-      return 35.6795613614414,139.739767079332
-    }
-  }
 
   getUserLocations() {
     console.log('func getUserLocations');
