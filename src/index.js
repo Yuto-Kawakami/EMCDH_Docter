@@ -65,7 +65,16 @@ class DemoApp extends React.PureComponent {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        this.setState.center(pos)
+        // this.setState.center(pos)
+        // console.log(this.setCenter)
+
+        this.setState({
+          center: {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude  
+          }
+        })
+
       })
     }
   }
