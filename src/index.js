@@ -44,7 +44,7 @@ class DemoApp extends React.PureComponent {
         consultationRecords: [],
       },
       center: {
-        lat, lng = getCurrentLocation()
+        lat, lng = this.getCurrentLocation()
         // lat: 35.6795613614414,
         // lng: 139.739767079332,
       },
