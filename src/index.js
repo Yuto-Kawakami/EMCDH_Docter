@@ -49,6 +49,7 @@ class DemoApp extends React.PureComponent {
       showModal: false,
     })
     this.getUserLocations();
+    this.getCurrentLocation();
   }
 
   // componentDidMount() {
@@ -58,19 +59,15 @@ class DemoApp extends React.PureComponent {
   // }
 
   getCurrentLocation() {
-    let lat_value = 35.6795613614414
-    let lng_value = 139.739767079332
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function(position) {
-          return {lat: position.coords.latitude, lng: position.coords.longitude}
-        },
-        function(error) {
-          return {lat: lat_value, lng: lng_value}
-        }
-      )
-    } else {
-      return {lat: lat_value, lng: lng_value}
+      navigator.geolocation.getCurrentPosition(position => {
+        this.setState({
+          center: {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          }
+        })
+      })
     }
   }
 
