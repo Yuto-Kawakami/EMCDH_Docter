@@ -61,16 +61,8 @@ class DemoApp extends React.PureComponent {
   getCurrentLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-
-        // this.state.center.lat = position.coords.latitude
-        // this.state.center.lng = position.coords.longitude
-
-        // this.setState({
-        //   center: {
-        //     lat: position.coords.latitude,
-        //     lng: position.coords.longitude
-        //   }
-        // })
+        this.state.center.lat = position.coords.latitude
+        this.state.center.lng = position.coords.longitude
       })
     }
   }
