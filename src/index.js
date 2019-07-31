@@ -48,7 +48,7 @@ class DemoApp extends React.PureComponent {
       },
       showModal: false,
     })
-    // this.getCurrentLocation();
+    this.getCurrentLocation();
     this.getUserLocations();
   }
 
@@ -58,14 +58,14 @@ class DemoApp extends React.PureComponent {
   //   });
   // }
 
-  // getCurrentLocation() {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(position => {
-  //       this.state.center.lat = position.coords.latitude
-  //       this.state.center.lng = position.coords.longitude
-  //     })
-  //   }
-  // }
+  getCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.state.center.lat = position.coords.latitude
+        this.state.center.lng = position.coords.longitude
+      })
+    }
+  }
 
 
   getUserLocations() {
