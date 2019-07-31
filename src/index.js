@@ -61,8 +61,12 @@ class DemoApp extends React.PureComponent {
   getCurrentLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
-        this.state.center.lat = position.coords.latitude
-        this.state.center.lng = position.coords.longitude
+        this.setState({
+          center: {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          }
+        });
       })
     }
   }
@@ -227,7 +231,7 @@ class DemoApp extends React.PureComponent {
           </Navbar.Header>
           <Nav pullRight>
             <NavItem>
-             © 2018 Koshizuka Lab.
+             © 2019 Koshizuka Lab.
             </NavItem>
           </Nav>
         </Navbar>

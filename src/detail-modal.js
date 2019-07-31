@@ -6,7 +6,8 @@ const modalStyle = {
     position: 'fixed',
     zIndex: 1040,
     top: 0, bottom: 0, left: 0, right: 0,
-    'overflow-y': 'scroll'
+    // 'overflow-y': 'scroll'
+    'overflowY': 'scroll'
 };
 
 const backdropStyle = {
@@ -61,7 +62,10 @@ export default class DetailModal extends React.Component {
                     show={this.props.showModal}
                     onHide={this.props.close}
                 >
+
                     <div style={dialogStyle()} >
+
+                        <button type="button" className="close" data-dismiss="Modal" onClick={this.props.close}><span>×</span></button>
                         <h4 id='modal-label'>患者情報 (ID: {this.props.destination_marker.user.id})</h4>
                         <Panel>
                             <Panel.Heading>
