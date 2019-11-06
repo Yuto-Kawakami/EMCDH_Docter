@@ -13,8 +13,8 @@ const { MarkerClusterer } = require("react-google-maps/lib/components/addons/Mar
 
 const MapWithAMarkerClusterer = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDoMZXJuvcBQ-LkqFkTaM7IJHxxG22lveQ&v=3.exp&libraries=geometry,drawing,places",
-    loadingElement: <div style={{ height: `100%` }} />,
+      googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAdk8qQIzp_NQa_KCaDYoXLhrJYE2ZkxMY.exp&libraries=geometry,drawing,places",
+      loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `900px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
